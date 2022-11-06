@@ -95,7 +95,7 @@ export default function Markdown(props: { amazonUrl?: string }) {
         >      {markdown.value}
         </pre>
       </div>
-      <div class="flex">
+      <div class="flex content-center justify-center">
         <Preview ASIN={ASIN.value}></Preview>
       </div>
     </div>
