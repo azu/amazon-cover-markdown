@@ -19,7 +19,14 @@ export default function Home({ data }: PageProps<Data>) {
       <Head>
         <title>Amazon Cover Code</title>
       </Head>
-      <Markdown amazonUrl={data.amazon}></Markdown>
+      <div class="flex flex-col h-screen justify-between">
+        <main class="mb-auto flex-grow">
+          <Markdown amazonUrl={data.amazon}></Markdown>
+        </main>
+        <footer class="bg-gray-200 p-2 text-center text-xs">
+          <a href="https://github.com/azu/amazon-cover-markdown">Source Code</a>
+        </footer>
+      </div>
     </>
   );
 }
