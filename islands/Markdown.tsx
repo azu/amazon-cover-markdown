@@ -17,7 +17,7 @@ const createMarkdownCode = (ASIN: string) => {
   }
   return `[![Cover Image](https://images-na.ssl-images-amazon.com/images/P/${ASIN}.MZZZZZZZ)](https://www.amazon.co.jp/dp/${ASIN}/)`;
 };
-const Preview = (props: { ASIN: string }) => {
+const Preview = (props: { ASIN?: string }) => {
   if (!props.ASIN) {
     return null;
   }
@@ -68,6 +68,9 @@ export const Form = () => {
 export default function Markdown(props: { amazonUrl?: string }) {
   const ASIN = computed(() => createASIN(props.amazonUrl ?? input.value));
   const markdown = computed(() => {
+    if (!ASIN.value) {
+      return;
+    }
     return createMarkdownCode(ASIN.value);
   });
   const onClick = () => {
