@@ -31,7 +31,7 @@ const Preview = (props: { ASIN?: string }) => {
   );
 };
 const input = signal("");
-export const Form = (props: { onBlur: () => void}) => {
+export const Form = (props: { onBlur: () => void }) => {
   return (
     <div>
       <form
@@ -76,7 +76,13 @@ export default function Markdown(props: { amazonUrl?: string }) {
   });
   const copyMarkdown = () => {
     if (markdown.value) {
-      navigator.clipboard.writeText(markdown.value);
+      navigator.clipboard.writeText(markdown.value).then(() => {
+        const title = document.title;
+        document.title = "[Copied]";
+        setTimeout(() => {
+          document.title = title;
+        }, 1000);
+      });
     }
   };
   return (
