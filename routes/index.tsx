@@ -3,12 +3,12 @@ import { signal } from "@preact/signals";
 import { Handlers, PageProps } from "$fresh/server.ts";
 import Markdown from "../islands/Markdown.tsx";
 interface Data {
-  amazon: string;
+  amazon?: string;
 }
 export const handler: Handlers<Data> = {
   GET(req, ctx) {
     const url = new URL(req.url);
-    const amazon = url.searchParams.get("amazon") || "";
+    const amazon = url.searchParams.get("amazon") ?? undefined;
     return ctx.render({ amazon });
   },
 };
