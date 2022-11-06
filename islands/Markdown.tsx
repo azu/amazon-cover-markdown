@@ -31,7 +31,7 @@ const Preview = (props: { ASIN?: string }) => {
   );
 };
 const input = signal("");
-export const Form = () => {
+export const Form = (props: { onBlur: () => void}) => {
   return (
     <div>
       <form
@@ -57,6 +57,7 @@ export const Form = () => {
             onInput={(event) => {
               input.value = event.currentTarget.value;
             }}
+            onBlur={props.onBlur}
           >
           </input>
         </div>
@@ -73,17 +74,17 @@ export default function Markdown(props: { amazonUrl?: string }) {
     }
     return createMarkdownCode(ASIN.value);
   });
-  const onClick = () => {
+  const copyMarkdown = () => {
     if (markdown.value) {
       navigator.clipboard.writeText(markdown.value);
     }
   };
   return (
     <div>
-      <Form></Form>
+      <Form onBlur={copyMarkdown}></Form>
       <div className="flex">
         <pre
-          onClick={onClick}
+          onClick={copyMarkdown}
           class="break-all whitespace-pre-line bg-gray-50 p-4"
         >      {markdown.value}
         </pre>
