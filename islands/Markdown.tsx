@@ -62,8 +62,9 @@ export const Form = () => {
   );
 };
 
-export default function Markdown() {
-  const ASIN = computed(() => createASIN(input.value));
+export default function Markdown(props: { amazonUrl?: string }) {
+  console.log(props)
+  const ASIN = computed(() => createASIN(props.amazonUrl ?? input.value));
   const markdown = computed(() => {
     return createMarkdownCode(ASIN.value);
   });

@@ -2,7 +2,13 @@
 
 Copy Amazon Product Cover image as Markdown.
 
-### Usage
+
+## Usage
+
+- Visit: https://amazon-cover-code.deno.dev/
+- Pass `?amazon=<amazon url>`: <https://amazon-cover-code.deno.dev/?amazon=https://www.amazon.co.jp/dp/4048930737/>
+
+## Dev
 
 Start the project:
 
