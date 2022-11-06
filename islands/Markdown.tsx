@@ -4,6 +4,9 @@ export type MarkdownProps = {
   amazonUrl: string;
 };
 const createASIN = (url: string) => {
+  if (!url.startsWith("https:")) {
+    return;
+  }
   // https://www.amazon.co.jp/dp/4048930737/
   const ASIN = url.replace(/^.*\/dp\/(\w+).*$/, "$1");
   return ASIN;
