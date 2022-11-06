@@ -22,7 +22,7 @@ const Preview = (props: { ASIN: string }) => {
     return null;
   }
   return (
-    <a href={`https://www.amazon.co.jp/dp/${props.ASIN}/`}>
+    <a href={`https://www.amazon.co.jp/dp/${props.ASIN}/`} target="_blank">
       <img
         src={`https://images-na.ssl-images-amazon.com/images/P/${props.ASIN}.MZZZZZZZ`}
         alt="cover image"
