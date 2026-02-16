@@ -1,4 +1,4 @@
-# Amazon Cover Code
+# Amazon Cover Markdown
 
 Copy Amazon Product Cover image as Markdown.
 
