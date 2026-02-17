@@ -9,8 +9,8 @@ const JOKES = [
   "Called IT support and a chap from Australia came to fix my network connection.  I asked “Do you come from a LAN down under?”",
   "There are 10 types of people in the world. Those who understand binary and those who don't.",
   "Why are assembly programmers often wet? They work below C level.",
-  "My favourite computer based band is the Black IPs.",
-  "What programme do you use to predict the music tastes of former US presidential candidates? An Al Gore Rhythm.",
+  "My favorite computer based band is the Black IPs.",
+  "What program do you use to predict the music tastes of former US presidential candidates? An Al Gore Rhythm.",
   "An SEO expert walked into a bar, pub, inn, tavern, hostelry, public house.",
 ];
 
